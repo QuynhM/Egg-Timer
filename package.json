@@ -33,7 +33,10 @@
       "makers": [
         {
           "name": "@electron-forge/maker-squirrel",
-          "config": {}
+          "config": {
+            "iconUrl": "https://raw.githubusercontent.com/yourusername/yourrepo/main/assets/boiled-egg.ico",
+            "setupIcon": "./assets/boiled-egg.ico"
+          }
         },
         {
           "name": "@electron-forge/maker-zip",
