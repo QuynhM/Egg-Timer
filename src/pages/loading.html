@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Egg Timer- Loading</title>
+    <link rel="stylesheet" href="../index.css" />
+  </head>
+  <body>
+    <div id="topbar">
+      <h1 id="name">Egg O'Clock</h1>
+      <button id="closeBtn">
+        <img src="../assets/closeBtn.png">
+      </button>
+    </div>
+
+    <div id="hero">
+      <h2 id="cookingText">Cooking...</h2>
+      <div id="cooking">
+        <img id="slide" src="../assets/egg1.png" alt="cooking img">
+      </div>
+      <div id="time">--:--</div>
+    </div>
+   
+   
+    <script>
+        document.getElementById('closeBtn').onclick = () => {
+            window.location.href = '../index.html'
+        }
+        
+        // Looping egg images
+        const images = ["../assets/egg1.png", "../assets/egg2.png", "../assets/egg3.png"];
+        let current = 0;
+        const slide = document.getElementById('slide');
+
+        setInterval(() => {
+          current = (current + 1) % images.length;
+          slide.src= images[current];
+        }, 1000);
+
+        // TIMER
+        let duration = parseInt(localStorage.getItem('eggTimerDuration'), 10);
+        let remaining = duration;
+        const timeDisplay = document.getElementById('time');
+
+        function formatTime(seconds) {
+        const m = Math.floor(seconds / 60);
+        const s = seconds % 60;
+        return `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+        }
+
+        function updateTimer() {
+        timeDisplay.textContent = formatTime(remaining);
+        if (remaining <= 0) {
+            clearInterval(timerInterval);
+            window.location.href = 'finish.html';
+        }
+        remaining--;
+        }
+
+        let timerInterval = setInterval(updateTimer, 1000);
+        updateTimer();
+    </script>
+  </body>
+</html>

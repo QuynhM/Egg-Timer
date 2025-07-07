@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>My Egg Timer App</title>
+    <link rel="stylesheet" href="index.css" />
+  </head>
+  <body>
+    <div id="topbar">
+      <h1 id="name">Egg O'Clock</h1>
+      <!-- <button id="closeBtn">✕</button> -->
+    </div>
+    <div id="hero">
+        <h2 id="slogan">
+          Tick Tock <br />
+          <span>Yolk on Lock!</span> 
+        </h2>
+        <button id="startBtn" class="btn">Start</button>
+    </div>
+    <script>
+      const clickSound = new Audio('assets/click.mp3')
+      document.getElementById('startBtn').onclick = () => {
+        clickSound.play();
+        clickSound.onended = () => {
+          window.location.href = 'pages/menu.html';
+        };
+      };
+    </script>
+
+  </body>
+</html>

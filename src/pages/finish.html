@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Egg Timer- Finish</title>
+    <link rel="stylesheet" href="../index.css" />
+  </head>
+  <body>
+    <div id="topbar">
+      <h1 id="name">Egg O'Clock</h1>
+      <button id="closeBtn">
+        <img src="../assets/closeBtn.png">
+      </button>
+    </div>
+
+    <div id="hero">
+      <h2 id="finish">Your egg is ready!</h2>
+      <img id="finishImg" alt="ready to eat">
+      <button id="moreBtn" class="btn">Cook more</button>
+    </div>
+    
+    
+    <script>
+      const finishSound = new Audio('../assets/finish.mp3'); // adjust path and filename as needed
+      finishSound.volume = 1;  // ensure volume is on
+      finishSound.play().catch(err => {
+        console.warn('Audio play failed:', err);
+      });
+        document.getElementById('closeBtn').onclick = () => {
+            window.location.href = '../index.html'
+        }
+        document.getElementById('moreBtn').onclick = () => {
+            window.location.href = 'menu.html'
+        }
+
+        const imgPath = localStorage.getItem('eggTimerImage');
+        const imgElement = document.getElementById('finishImg');
+        imgElement.src = imgPath;
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Egg Timer- Menu</title>
+    <link rel="stylesheet" href="../index.css" />
+  </head>
+  <body>
+    <div id="topbar">
+      <h1 id="name">Egg O'Clock</h1>
+      <button id="closeBtn">
+        <img src="../assets/closeBtn.png">
+      </button>
+    </div>
+
+    <div id="hero">
+      <h2 id="question">What's your egg mood today?</h2>
+      <div id="menu">
+        <button class="optionBtn" data-time="300" data-img="../assets/soft-boiled.png">
+          <img src="../assets/soft-boiled.png" alt="soft-egg" class="btn-menu-icon">
+          Soft Boiled
+        </button>
+        <button class="optionBtn" data-time="480" data-img="../assets/hard-boiled.png">
+          <img src="../assets/hard-boiled.png" alt="hard-egg" class="btn-menu-icon">
+          Hard Boiled
+        </button>
+        <button class="optionBtn" data-time="180" data-img="../assets/fried egg.png">
+          <img src="../assets/fried egg.png" alt="fried-egg" class="btn-menu-icon">
+          Fried Egg
+        </button>
+        <button class="optionBtn" data-time="3" data-img="../assets/scrambled egg.png">
+          <img src="../assets/scrambled egg.png" alt="scrambled-egg" class="btn-menu-icon">
+          <!-- Scrambled Egg -->
+          Test
+        </button>
+      </div>
+    </div>
+    
+    
+    <script>
+        document.getElementById('closeBtn').onclick = () => {
+            window.location.href = '../index.html'
+        }
+        const options = document.querySelectorAll('.optionBtn');
+
+        options.forEach(option => {
+          option.addEventListener('click', () => {
+            const time = option.getAttribute('data-time');
+            const img = option.getAttribute('data-img');
+            // Save time for cooking page
+            localStorage.setItem('eggTimerDuration', time);
+            // Save image for finish page
+            localStorage.setItem('eggTimerImage', img);
+            // Go to cooking page when click on any option btn
+            window.location.href = 'loading.html';
+          })
+        })
+    </script>
+  </body>
+</html>

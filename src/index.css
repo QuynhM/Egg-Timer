@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jersey+10&display=swap');
+
+
+/* color */
+:root{
+  --yellow: #fee56d;
+  --border-yellow: #fdbe38;
+  --orange-text: #e55a29;
+  --brown: #513626;
+  --pink: #f2c2cf;
+  --border-yellow2: #f2c53d;
+  --pink-text: #ef4361;
+  --btn-color: #fcc592;
+}
+
+body {
+  font-family: "Pixelify Sans", sans-serif;
+  margin: 0;                  /* Remove default margin */
+  padding-left: 18px;                 
+  padding-right: 18px;
+  padding-top: 0;   
+  padding-bottom: 18px;                
+  width: 100vw;               /* Full viewport width */
+  height: 100vh;              /* Full viewport height */
+  box-sizing: border-box;     /* Include border in size */
+  background-color: var(--pink);
+  border: 5px solid var(--border-yellow2);
+  display: flex;
+  flex-direction: column;
+}
+
+h1 {
+  font-size: 40pt;
+  color: var(--pink-text);
+  font-weight: 500;
+  margin: 0;  
+}
+
+h2 {
+  font-size: 40pt;
+  color: var(--brown);
+  font-weight: 500;
+  margin: 0;
+  
+}
+
+/* Top Bar Styling */
+#topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* padding: 1rem 1.5rem; */
+}
+
+#name {
+  font-size: 50pt;
+  font-weight: 500;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.btn {
+  background-color: var(--btn-color);
+  border-radius: 5pt;
+  color:  var(--pink-text);
+  font-family: "Pixelify Sans", sans-serif;
+  font-weight: 500;
+  font-size: 28pt;
+  border: 5px solid var(--pink-text);
+  padding: 10px 45px;    
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
+
+#closeBtn {
+  border: none;
+  cursor: pointer;
+  width: 10%;
+  height: 10%;
+  background:none;
+  padding: 0;
+  display: flex;              /* Center the icon inside */
+  align-items: center;
+  justify-content: center;
+}
+
+#closeBtn img {
+  width: 40px;               
+  height: 40px;
+  object-fit: contain;
+}
+
+#slogan{
+  margin-bottom: 30px;
+}
+
+/* Hero Section with background image */
+#hero {
+  flex-grow: 1;               
+  background-image: url('./assets/heroBG.jpg'); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;               
+  height: 100%;
+  text-align: center;
+}
+
+#question {
+  font-size: 22pt;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+
+#menu {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;           /* spacing between buttons */
+  padding: 10px;       /* space around the grid */
+  width: 100%;
+  text-align: center;
+  max-width: 600px;    /* control the total width */
+  margin: 0 auto;      /* center horizontally */
+  box-sizing: border-box;
+}
+
+.optionBtn {
+  display: flex;
+  flex-direction: column;   
+  align-items: center;
+  justify-content: center;      /* center content vertically */
+  gap: 10px;                 
+  background-color: rgba(255, 255, 255, 0.3); 
+  border: none;             
+  border-radius: 12pt;
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 25px;
+  font-weight: 500;
+  color: var(--brown);
+  cursor: pointer;
+  box-sizing: border-box; 
+  /* Make them square */
+  aspect-ratio: 1/1;
+  width: 100%;    /* fill the grid cell */
+  padding: 0;  
+  transition: transform 0.3s ease;
+}
+
+.optionBtn:hover {
+  background-color: rgba(255, 255, 255); 
+}
+
+.btn-menu-icon {
+  width: 60%;    /* adjust icon size */
+  height: 60%;
+  object-fit: contain;
+}
+
+/* Loading page */
+#cookingText{
+  margin: 0;
+}
+
+#cooking {
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+}
+
+#cooking img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin-bottom: 50px; 
+}
+#time{
+  font-family: "Jersey 10", sans-serif;
+  font-weight: 400;
+  font-size: 60px;
+  margin-top: 20px;
+  color: var(--brown)
+}
+
+#finishImg{
+  width: 50%;
+  height: 50%;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+ #moreBtn{
+  padding: 10px;
+ }
+
+ #finish{
+  font-size: 35pt;
+  margin-top: -30px;
+ }
